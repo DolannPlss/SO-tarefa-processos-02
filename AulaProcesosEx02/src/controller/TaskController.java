@@ -29,9 +29,9 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}else {
+		}else {if (os.contains("Linux")) {
 			try {
-				Process p = Runtime.getRuntime().exec(process);
+				Process p = Runtime.getRuntime().exec("ps -ef");
 				InputStream fluxo = p.getInputStream();
 				InputStreamReader leitor = new InputStreamReader(fluxo);
 				BufferedReader buffer = new BufferedReader(leitor);
@@ -46,6 +46,7 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
 		}
 	}
 	public void killProcessid (int id) {
@@ -62,8 +63,8 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}else{
-			String 	cmdPid = "taskkill /PID";
+		}else{if (os.contains("Linux")) {
+			String 	cmdPid = "kill -9";
 			int pid=(id);
 			StringBuffer buffer = new StringBuffer();
 			buffer.append(cmdPid);
@@ -74,6 +75,7 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
 		}
 			
 	}
@@ -90,8 +92,8 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}else{
-			String 	cmdNome = "taskkill /IM";
+		}else{if (os.contains("Linux")) {
+			String 	cmdNome = "killall";
 			StringBuffer buffer = new StringBuffer();
 			buffer.append(cmdNome);
 			buffer.append(" ");
@@ -101,6 +103,7 @@ public class TaskController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
 		}
 	}
 
