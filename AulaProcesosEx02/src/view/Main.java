@@ -10,11 +10,10 @@ public class Main {
 		TaskController TaController = new TaskController();
 		
 		String os = TaskController.os();
-		System.out.println(os);
 		
 		int opc = 0;
 		while (opc!=9){
-			opc=Integer.parseInt(JOptionPane.showInputDialog("insira comando\n 1-task list\n 2-taskkill por id\n 9-taskkill por nome\n "));
+			opc=Integer.parseInt(JOptionPane.showInputDialog("insira comando\n 1-task list\n 2-taskkill por id\n 3-taskkill por nome\n 9-finalizar\\n "));
 			switch (opc) {
 			
 			case 1:
