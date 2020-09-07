@@ -93,7 +93,7 @@ public class TaskController {
 				e.printStackTrace();
 			}
 		}else{if (os.contains("Linux")) {
-			String 	cmdNome = "killall";
+			String 	cmdNome = "pkill -f";
 			StringBuffer buffer = new StringBuffer();
 			buffer.append(cmdNome);
 			buffer.append(" ");
