@@ -14,7 +14,7 @@ public class TaskController {
 		String os = TaskController.os();
 		if (os.contains("Windows")) {
 			try {
-				Process p = Runtime.getRuntime().exec(process);
+				Process p = Runtime.getRuntime().exec("tasklist /fo table");
 				InputStream fluxo = p.getInputStream();
 				InputStreamReader leitor = new InputStreamReader(fluxo);
 				BufferedReader buffer = new BufferedReader(leitor);

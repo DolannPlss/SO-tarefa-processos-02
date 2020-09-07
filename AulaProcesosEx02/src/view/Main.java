@@ -18,7 +18,7 @@ public class Main {
 			switch (opc) {
 			
 			case 1:
-				String process = "tasklist /fo table";
+				String process = os;
 				TaController.readProcess(process);
 				break;
 			case 2:
